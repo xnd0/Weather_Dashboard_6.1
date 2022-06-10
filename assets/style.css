@@ -2,6 +2,13 @@
 /* ----- CSS File ----- */
 /* -------------------- */
 
+
+
+body {
+    background-image: linear-gradient(rgb(238, 238, 255), rgb(58, 58, 107));
+
+}
+
 nav {
     text-align: center;
     /* background-color: blue; */
@@ -10,7 +17,13 @@ nav {
 }
 
 
+/* --- Class Selectors --- */
 
 .forecast {
     display: flex;
+}
+
+.outline {
+    border: 1px solid black;
+    border-radius: 4px;
 }
