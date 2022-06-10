@@ -8,3 +8,9 @@ nav {
     background-image: linear-gradient(to right, yellow, red);
     color:aliceblue;
 }
+
+
+
+.forecast {
+    display: flex;
+}
