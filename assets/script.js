@@ -23,27 +23,51 @@ function showResponse(event) {
     requestCityUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=5&appid=1d148820fae7548eecd9ed98012efbde";
 
     fetch(requestCityUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log('Fetch Response CITY GEOCODE \n-------------');
-        console.log(data);
-    });
+        // .then(function (response) {
+        //     return response.json();
+        // })
+        // .then(function (response) {
+        //     console.log('Fetch Response CITY GEOCODE \n-------------');
+        //     console.log(data);
+        //     fetch(requestUrl)
+        //         .then(function (response) {
+        //             return response.json();
+        //         })
+        //         .then(function (data) {
+        //             console.log('Fetch Response \n-------------');
+        //             console.log("data.city is: " + data[0].name);
+        //         });
+        .then(data => data.json())
+        .then(
+            data => {
+                console.log(data);
+                console.log("test");
+                console.log(data[0].lat);
+                console.log(data[0].lon);
+                // --display the quote
 
-  }
+                // var chuckQuote = document.createElement('h3');
+                // chuckQuote.textContent = response.value;
+                // chuckQuoteText = response.value;
+                // quoteContainer.append(chuckQuote);
+
+            }).catch(err => console.error(err));
+
+
+
+}
 
 
 
 
-fetch(requestUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log('Fetch Response \n-------------');
-        console.log(data.city);
-    });
+// fetch(requestUrl)
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function (data) {
+//         console.log('Fetch Response \n-------------');
+//         console.log("data.city is: " + data.city);
+//     });
 
 
 searchCityButton.addEventListener("click", showResponse);
