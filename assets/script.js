@@ -15,6 +15,9 @@ var uvResult = document.getElementById('uvSearchResult'); //uv%
 var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=1d148820fae7548eecd9ed98012efbde";
 
 
+let currentDate = moment().format("M/D/YYYY");
+console.log(currentDate);
+
 function showResponse(event) {
     // Prevent default action
     event.preventDefault();
@@ -58,7 +61,7 @@ function showResponse(event) {
                             humidityResult.textContent = 'Humidity: ' + response.current.humidity + '%';
                             uvResult.textContent = 'UV Index: ' + response.current.uvi;
 
-                            const uvIndex = response.current.uvi
+                            const uvIndex = response.current.uvi;
 
                             if (uvIndex <= 3) {
                                 uvResult.setAttribute("style", "background-color: green;");
