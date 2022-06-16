@@ -64,7 +64,16 @@ function showResponse(event) {
                     .then(
                         response => {
                             console.log(response);
+                            
+                            console.log('temp is: ' + response.current.temp);
+                            console.log('wind is: ' + response.current.wind_speed);
+                            console.log('humidity is: ' + response.current.humidity);
+                            console.log('uvi is: ' + response.current.uvi);
 
+                            tempResult.textContent = 'temp is' + response.current.temp; 
+                            windResult.textContent = 'wind is: ' + response.current.wind_speed;
+                            humidityResult.textContent = 'humidity is: ' + response.current.humidity;
+                            uvResult.textContent = 'uvi is: ' + response.current.uvi;
 
                         }
                     )
