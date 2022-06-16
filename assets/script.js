@@ -11,6 +11,8 @@ var windResult = document.getElementById('windSearchResult'); //wind
 var humidityResult = document.getElementById('humiditySearchResult'); //humidity
 var uvResult = document.getElementById('uvSearchResult'); //uv%
 
+var cityHistoryEl = document.getElementById('cityHistory');
+
 
 var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=1d148820fae7548eecd9ed98012efbde";
 
@@ -18,12 +20,35 @@ var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appi
 let currentDate = moment().format("M/D/YYYY");
 console.log(currentDate);
 
+
+const citySearchArray = [];
+
+// --- Functions Section --- //
+
+function saveCity() {
+    console.log('testttt');
+
+    var storedCity = JSON.parse(localStorage.getItem("cityList"));
+	if (storedCity !== null) {
+		citySearchArray = storedCity;
+	};
+	citySearchArray.push(cityInput.value);
+	localStorage.setItem("cityList", JSON.stringify(citySearchArray));
+
+    cityHistoryEl.textContent = cityInput.value;
+
+} 
+
+
+
 function showResponse(event) {
     // Prevent default action
     event.preventDefault();
 
     console.log('searchCity is:' + cityInput.value);
     cityResult.textContent = cityInput.value + '  (' + currentDate + ')';
+
+    saveCity();
 
     requestCityUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=5&appid=1d148820fae7548eecd9ed98012efbde";
 
