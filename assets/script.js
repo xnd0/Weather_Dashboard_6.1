@@ -23,7 +23,7 @@ function showResponse(event) {
     event.preventDefault();
 
     console.log('searchCity is:' + cityInput.value);
-    cityResult.textContent = cityInput.value;
+    cityResult.textContent = cityInput.value + '  (' + currentDate + ')';
 
     requestCityUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=5&appid=1d148820fae7548eecd9ed98012efbde";
 
