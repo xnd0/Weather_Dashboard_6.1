@@ -27,3 +27,8 @@ nav {
     border: 1px solid black;
     border-radius: 4px;
 }
+
+.card-body {
+    background-image: linear-gradient(to right,rgb(22, 22, 68), rgb(2, 2, 12));
+    border-radius: 6px;
+}
