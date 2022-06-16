@@ -4,7 +4,12 @@
 
 var searchCityButton = document.querySelector('#searchCityButton');
 var cityInput = document.querySelector('#searchCity');
-var cityResult = document.getElementById('citySearchResult');
+
+var cityResult = document.getElementById('citySearchResult'); // city input
+var tempResult = document.getElementById('tempSearchResult'); //temp
+var windResult = document.getElementById('windSearchResult'); //wind
+var humidityResult = document.getElementById('humiditySearchResult'); //humidity
+var uvResult = document.getElementById('uvSearchResult'); //uv%
 
 
 var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=1d148820fae7548eecd9ed98012efbde";
@@ -59,11 +64,13 @@ function showResponse(event) {
                     .then(
                         response => {
                             console.log(response);
+
+
                         }
                     )
 
 
-                // --display the quote
+                // --- display Info
 
                 // var chuckQuote = document.createElement('h3');
                 // chuckQuote.textContent = response.value;
