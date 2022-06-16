@@ -31,8 +31,10 @@ function saveCity() {
     console.log('testttt');
 
     let storedCity = JSON.parse(localStorage.getItem("cityList"));
+    console.log('stored city is: ' + storedCity);
 	if (storedCity !== null) {
 		citySearchArray = storedCity;
+        console.log('citySearchArray is: ' + citySearchArray);
 	};
 	citySearchArray.push(cityInput.value);
 	localStorage.setItem("cityList", JSON.stringify(citySearchArray));
@@ -45,6 +47,11 @@ function saveCity() {
 
 function displaySaved() {
 	let storedCity = JSON.parse(localStorage.getItem("cityList"))
+    console.log('strod city' + storedCity);
+    cityHistoryEl.textContent = ""; // clears array
+    if (storedCity === null) {  // fixes no-local bug
+        return;
+    }
 	for (let i = 0; i < storedCity.length; i++) {
         const historyEl = document.createElement("button");
         historyEl.textContent = storedCity[i];
@@ -53,6 +60,7 @@ function displaySaved() {
 };
 
 displaySaved();
+
 
 function showResponse(event) {
     // Prevent default action

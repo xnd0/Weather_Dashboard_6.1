@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Weather Dashboard</title>
@@ -19,70 +16,71 @@
         <h2>Weather Dashboard</h2>
     </nav>
 
-    <!-- Search Input Area -->
-    <section class="col-4">
-        <div>Search by City</div>
-        <div class="input-group">
-
-            <input id="searchCity" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon" />
-            <button id="searchCityButton" type="button" class="btn btn-outline-primary">search</button>
-        </div>
-    </section>
-
-    <!-- Main Result Return Area -->
-    <section class="col-8 outline">
-        <h3 id="citySearchResult"></h3>
-        <h4 id="tempSearchResult"></h4>
-        <h4 id="windSearchResult"></h4>
-        <h4 id="humiditySearchResult"></h4>
-        <h4 id="uvSearchResult"></h4>
-        <!-- <h3>+ returned data:</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam placeat ut dicta esse aliquam laudantium. Nobis
-            at repudiandae quis aut, dicta earum expedita beatae dolor enim praesentium sapiente odio ex natus unde sint
-            voluptates nesciunt et veritatis doloremque qui error? Soluta itaque culpa, mollitia sunt hic totam
-            recusandae accusantium debitis quasi expedita quo et tis consectetur, a necessitatibus ipsum explicabo unde!
-            Culpa illum praesentium doloremque officia eos quod beatae deserunt. Ad, accusantium perspiciatis eum
-            blanditiis tempore deleniti praesentium sequi hic voluptatem eos labore!</p> -->
-    </section>
-
-
-    <!-- Search City History Display -->
     <section>
-        <h5>Search History:</h5>
-        <div id="cityHistory"></div>
-    </section>
+        <!-- Bootstrap Container -->
+
+        <section>
+            <!-- Rows -->
+
+            <!-- Search City History Display -->
+            <section>
+                <h5>Search History:</h5>
+                <div id="cityHistory"></div>
+            </section>
 
 
-    <!-- 5-day forecast card area -->
-    <h3>5-Day Forecast:</h3>
-    <section class="forecast">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">[date goes here]</h5>
-                <h6 class="card-subtitle mb-2 text-muted">[sun/clouds image]</h6>
-                <h6 class="card-text">[Temperature]</h6>
-                <h6 class="card-text">[Wind]</h6>
-                <h6 class="card-text">[Humidity %]</h6>
-            </div>
-        </div>
 
-        <section class="forecast">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">[date goes here]</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">[sun/clouds image]</h6>
-                    <h6 class="card-text">[Temperature]</h6>
-                    <h6 class="card-text">[Wind]</h6>
-                    <h6 class="card-text">[Humidity %]</h6>
+            <!-- Search Input Area -->
+            <section class="col-4">
+                <div>Search by City</div>
+                <div class="input-group">
+
+                    <input id="searchCity" type="search" class="form-control rounded" placeholder="Search"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button id="searchCityButton" type="button" class="btn btn-outline-primary">search</button>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Main Result Return Area -->
+            <section class="col-8 outline">
+                <h3 id="citySearchResult"></h3>
+                <h4 id="tempSearchResult"></h4>
+                <h4 id="windSearchResult"></h4>
+                <h4 id="humiditySearchResult"></h4>
+                <h4 id="uvSearchResult"></h4>
+            </section>
+
+            <!-- 5-day forecast card area -->
+            <h3>5-Day Forecast:</h3>
+            <section class="forecast">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">[date goes here]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">[sun/clouds image]</h6>
+                        <h6 class="card-text">[Temperature]</h6>
+                        <h6 class="card-text">[Wind]</h6>
+                        <h6 class="card-text">[Humidity %]</h6>
+                    </div>
+                </div>
+
+                <section class="forecast">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">[date goes here]</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">[sun/clouds image]</h6>
+                            <h6 class="card-text">[Temperature]</h6>
+                            <h6 class="card-text">[Wind]</h6>
+                            <h6 class="card-text">[Humidity %]</h6>
+                        </div>
+                    </div>
+                </section>
 
 
 
+            </section>
 
-        <script src="./assets/script.js"></script>
+
+            <script src="./assets/script.js"></script>
 </body>
 
 </html>
