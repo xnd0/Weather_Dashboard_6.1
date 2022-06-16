@@ -51,6 +51,18 @@ function showResponse(event) {
                 searchUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${searchLat}&lon=${searchLon}&units=imperial&exclude=minutely,hourly&appid=1d148820fae7548eecd9ed98012efbde`;
 
                 console.log('searchUrl is: ' + searchUrl)
+
+                // --- fetch from searchUrl --- //
+
+                fetch(searchUrl)
+                    .then(response => response.json())
+                    .then(
+                        response => {
+                            console.log(response);
+                        }
+                    )
+
+
                 // --display the quote
 
                 // var chuckQuote = document.createElement('h3');
