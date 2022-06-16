@@ -70,10 +70,10 @@ function showResponse(event) {
                             console.log('humidity is: ' + response.current.humidity);
                             console.log('uvi is: ' + response.current.uvi);
 
-                            tempResult.textContent = 'temp is' + response.current.temp; 
-                            windResult.textContent = 'wind is: ' + response.current.wind_speed;
-                            humidityResult.textContent = 'humidity is: ' + response.current.humidity;
-                            uvResult.textContent = 'uvi is: ' + response.current.uvi;
+                            tempResult.textContent = 'Temperature: ' + response.current.temp + '°F'; 
+                            windResult.textContent = 'Wind: ' + response.current.wind_speed + ' MPH';
+                            humidityResult.textContent = 'Humidity: ' + response.current.humidity + '%';
+                            uvResult.textContent = 'UV Index: ' + response.current.uvi;
 
                         }
                     )
