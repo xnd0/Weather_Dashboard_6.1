@@ -46,7 +46,7 @@ function saveCity() {
 function displaySaved() {
 	let storedCity = JSON.parse(localStorage.getItem("cityList"))
 	for (let i = 0; i < storedCity.length; i++) {
-        const historyEl = document.createElement("div");
+        const historyEl = document.createElement("button");
         historyEl.textContent = storedCity[i];
         cityHistoryEl.appendChild(historyEl); 
     }
