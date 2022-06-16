@@ -21,25 +21,38 @@ let currentDate = moment().format("M/D/YYYY");
 console.log(currentDate);
 
 
-const citySearchArray = [];
+let citySearchArray = [];
+let storedCity = [];
+
 
 // --- Functions Section --- //
 
 function saveCity() {
     console.log('testttt');
 
-    var storedCity = JSON.parse(localStorage.getItem("cityList"));
+    let storedCity = JSON.parse(localStorage.getItem("cityList"));
 	if (storedCity !== null) {
 		citySearchArray = storedCity;
 	};
 	citySearchArray.push(cityInput.value);
 	localStorage.setItem("cityList", JSON.stringify(citySearchArray));
 
-    cityHistoryEl.textContent = cityInput.value;
+    displaySaved();
+
+    // cityHistoryEl.textContent = cityInput.value;
 
 } 
 
+function displaySaved() {
+	let storedCity = JSON.parse(localStorage.getItem("cityList"))
+	for (let i = 0; i < storedCity.length; i++) {
+        const historyEl = document.createElement("div");
+        historyEl.textContent = storedCity[i];
+        cityHistoryEl.appendChild(historyEl); 
+    }
+};
 
+displaySaved();
 
 function showResponse(event) {
     // Prevent default action
