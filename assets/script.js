@@ -14,9 +14,6 @@ var uvResult = document.getElementById('uvSearchResult'); //uv%
 
 var requestUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=1d148820fae7548eecd9ed98012efbde";
 
-// var requestCityUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=5&appid=1d148820fae7548eecd9ed98012efbde";
-
-// var requestCityUrl ="";
 
 function showResponse(event) {
     // Prevent default action
@@ -28,20 +25,6 @@ function showResponse(event) {
     requestCityUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=5&appid=1d148820fae7548eecd9ed98012efbde";
 
     fetch(requestCityUrl)
-        // .then(function (response) {
-        //     return response.json();
-        // })
-        // .then(function (response) {
-        //     console.log('Fetch Response CITY GEOCODE \n-------------');
-        //     console.log(data);
-        //     fetch(requestUrl)
-        //         .then(function (response) {
-        //             return response.json();
-        //         })
-        //         .then(function (data) {
-        //             console.log('Fetch Response \n-------------');
-        //             console.log("data.city is: " + data[0].name);
-        //         });
         .then(data => data.json())
         .then(
             data => {
@@ -64,45 +47,36 @@ function showResponse(event) {
                     .then(
                         response => {
                             console.log(response);
-                            
+
                             console.log('temp is: ' + response.current.temp);
                             console.log('wind is: ' + response.current.wind_speed);
                             console.log('humidity is: ' + response.current.humidity);
                             console.log('uvi is: ' + response.current.uvi);
 
-                            tempResult.textContent = 'Temperature: ' + response.current.temp + '°F'; 
+                            tempResult.textContent = 'Temperature: ' + response.current.temp + '°F';
                             windResult.textContent = 'Wind: ' + response.current.wind_speed + ' MPH';
                             humidityResult.textContent = 'Humidity: ' + response.current.humidity + '%';
                             uvResult.textContent = 'UV Index: ' + response.current.uvi;
 
+                            const uvIndex = response.current.uvi
+
+                            if (uvIndex <= 3) {
+                                uvResult.setAttribute("style", "background-color: green;");
+                            } else if (uvIndex > 3 && uvIndex <= 6) {
+                                uvResult.setAttribute("style", "background-color: yellow;");
+                            } else if (uvIndex > 6 && uvIndex <= 8) {
+                                uvResult.setAttribute("style", "background-color: orange;");
+                            } else if (uvIndex > 8 && uvIndex <= 11) {
+                                uvResult.setAttribute("style", "background-color: red;");
+                            } else {
+                                uvResult.setAttribute("style", "background-color: purple;");
+                            }
                         }
                     )
-
-
-                // --- display Info
-
-                // var chuckQuote = document.createElement('h3');
-                // chuckQuote.textContent = response.value;
-                // chuckQuoteText = response.value;
-                // quoteContainer.append(chuckQuote);
-
             }).catch(err => console.error(err));
-
-
-
 }
 
 
-
-
-// fetch(requestUrl)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log('Fetch Response \n-------------');
-//         console.log("data.city is: " + data.city);
-//     });
 
 
 searchCityButton.addEventListener("click", showResponse);
