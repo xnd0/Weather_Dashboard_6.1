@@ -4,7 +4,7 @@
 <br>
 
 ## Description:
-Search by city to return the weather forecast
+'Search by City' to return the local weather forecast. Returned results will include the city, current date, temperature, wind speed, humidity %, and UV Index. User's search history will be saved and displayed (from local) on-screen.
 <br><br>
 
 ## Links: <br>
